@@ -22,7 +22,10 @@ class StartGameFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.startGameBtn.setOnClickListener {
-
+            fragmentManager!!.beginTransaction().replace(
+                R.id.container,
+                SelectNumberFragment()
+            ).commit()
         }
     }
 }
