@@ -28,16 +28,22 @@ class SelectNumberFragment : Fragment() {
         setSpinner()
 
         start_btn.setOnClickListener {
-            val selectedNumber = selected_number.text.toString().toInt()
+            val selectedNumber = binding.selectedNumber.text.toString().toInt()
             val master = Random.nextInt(selectedNumber)
             val insider = choiceInsider(selectedNumber, master)
 
-            val bundle = Bundle()
+            val mainActivity = activity as MainActivity
 
-            bundle.putInt("master", master)
-            bundle.putInt("insider", insider)
+            mainActivity.apply {
+                this.playersInfo.number = selectedNumber
+                this.playersInfo.master = master
+                this.playersInfo.insider = insider
+            }
 
-
+            fragmentManager!!.beginTransaction().replace(
+                R.id.container,
+                DisplayConfirmationFragment()
+            ).commit()
         }
     }
 
@@ -74,7 +80,7 @@ class SelectNumberFragment : Fragment() {
                 val spinnerParent = parent as Spinner
                 val item = spinnerParent.selectedItem as String
                 // Kotlin Android Extensions
-                selected_number.text = item
+                binding.selectedNumber.text = item
             }
 
             //　アイテムが選択されなかった
