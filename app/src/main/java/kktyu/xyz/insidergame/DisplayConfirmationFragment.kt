@@ -43,7 +43,10 @@ class DisplayConfirmationFragment : Fragment() {
         binding.text = "$nextNum 人目の"
 
         binding.yesBtn.setOnClickListener {
-
+            fragmentManager!!.beginTransaction().replace(
+                R.id.container,
+                RoleConfirmationFragment()
+            ).commit()
         }
     }
 }
