@@ -8,4 +8,6 @@
     <string name="start">START</string>
     <string name="display_role">役職を表示します。</string>
     <string name="yes">はい</string>
+    <string name="you_is">あなたは</string>
+    <string name="desu">です。</string>
 </resources>
