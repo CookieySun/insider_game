@@ -11,4 +11,7 @@
     <string name="you_is">あなたは</string>
     <string name="desu">です</string>
     <string name="theme_is">お題は</string>
+    <string name="master">マスター</string>
+    <string name="come_out">は名乗り出てください</string>
+    <string name="start_question_time">質問タイム開始</string>
 </resources>

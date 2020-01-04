@@ -34,7 +34,10 @@ class ThemeConfirmationFragment : Fragment() {
         binding.nextButton.setOnClickListener {
             when {
                 isLast -> {
-                    //TODO マスター確認画面へ
+                    fragmentManager!!.beginTransaction().replace(
+                        R.id.container,
+                        MasterConfirmationFragment()
+                    ).commit()
                 }
                 else -> {
                     fragmentManager!!.beginTransaction().replace(
