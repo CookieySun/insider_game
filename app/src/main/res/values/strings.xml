@@ -6,8 +6,9 @@
     <string name="player_number">プレイヤー人数</string>
     <string name="nin">人</string>
     <string name="start">START</string>
-    <string name="display_role">役職を表示します。</string>
+    <string name="display_role">役職を表示します</string>
     <string name="yes">はい</string>
     <string name="you_is">あなたは</string>
-    <string name="desu">です。</string>
+    <string name="desu">です</string>
+    <string name="theme_is">お題は</string>
 </resources>
