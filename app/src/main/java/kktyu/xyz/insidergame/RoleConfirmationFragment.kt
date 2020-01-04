@@ -62,7 +62,10 @@ class RoleConfirmationFragment : Fragment() {
                     ).commit()
                 }
                 isLast -> {
-                    //TODO マスター確認へ
+                    fragmentManager!!.beginTransaction().replace(
+                        R.id.container,
+                        MasterConfirmationFragment()
+                    ).commit()
                 }
                 else -> {
                     fragmentManager!!.beginTransaction().replace(
