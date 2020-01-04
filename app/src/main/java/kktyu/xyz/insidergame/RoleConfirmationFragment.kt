@@ -28,7 +28,7 @@ class RoleConfirmationFragment : Fragment() {
         val isMasterOrInsider =
             (nextNum == mainActivity.playersInfo.master || nextNum == mainActivity.playersInfo.insider)
 
-        val lastNum = mainActivity.playersInfo.nextNum >= mainActivity.playersInfo.number
+        val isLast = mainActivity.playersInfo.nextNum >= mainActivity.playersInfo.number
 
         binding.viewModel = RoleConfirmationViewModel()
 
@@ -45,7 +45,7 @@ class RoleConfirmationFragment : Fragment() {
                 isMasterOrInsider -> {
                     "お題確認へ"
                 }
-                lastNum -> {
+                isLast -> {
                     "マスター確認"
                 }
                 else -> {
@@ -56,9 +56,12 @@ class RoleConfirmationFragment : Fragment() {
         binding.nextButton.setOnClickListener {
             when {
                 isMasterOrInsider -> {
-                    // TODO お題確認へ
+                    fragmentManager!!.beginTransaction().replace(
+                        R.id.container,
+                        ThemeConfirmationFragment()
+                    ).commit()
                 }
-                lastNum -> {
+                isLast -> {
                     //TODO マスター確認へ
                 }
                 else -> {
