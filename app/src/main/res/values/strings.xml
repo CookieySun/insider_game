@@ -16,4 +16,5 @@
     <string name="start_question_time">質問タイム開始</string>
     <string name="question_time">質問タイム</string>
     <string name="correct_answer">正解</string>
+    <string name="discussion_time">議論タイム</string>
 </resources>

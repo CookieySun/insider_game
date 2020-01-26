@@ -3,26 +3,29 @@ package kktyu.xyz.insidergame
 
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isGone
 import androidx.fragment.app.Fragment
 import kktyu.xyz.insidergame.databinding.FragmentCountDownBinding
 
-class QuestionTimeFragment : Fragment() {
+class DiscussionTimeFragment : Fragment() {
     lateinit var binding: FragmentCountDownBinding
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentCountDownBinding.inflate(inflater, container, false)
-
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.answerButton.isGone = true
+        binding.questionTimeText.text = this.getText(R.string.discussion_time)
 
         val timer = object : CountDownTimer(300000, 250) {
             override fun onTick(millisUntilFinished: Long) {
@@ -34,21 +37,9 @@ class QuestionTimeFragment : Fragment() {
             }
 
             override fun onFinish() {
-                beginDiscussionTimeFragment()
+                Log.d("loglog", "onFinish")
             }
         }
         timer.start()
-
-        binding.answerButton.setOnClickListener {
-            beginDiscussionTimeFragment()
-        }
     }
-
-    private fun beginDiscussionTimeFragment() {
-        fragmentManager!!.beginTransaction().replace(
-            R.id.container,
-            DiscussionTimeFragment()
-        ).commit()
-    }
-
 }
