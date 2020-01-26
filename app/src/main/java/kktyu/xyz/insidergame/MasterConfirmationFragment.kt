@@ -21,7 +21,10 @@ class MasterConfirmationFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         start_question_time_button.setOnClickListener {
-            // TODO 質問タイムへ
+            fragmentManager!!.beginTransaction().replace(
+                R.id.container,
+                QuestionTimeFragment()
+            ).commit()
         }
     }
 

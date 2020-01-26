@@ -14,4 +14,6 @@
     <string name="master">マスター</string>
     <string name="come_out">は名乗り出てください</string>
     <string name="start_question_time">質問タイム開始</string>
+    <string name="question_time">質問タイム</string>
+    <string name="correct_answer">正解</string>
 </resources>
