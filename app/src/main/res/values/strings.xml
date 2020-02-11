@@ -16,5 +16,8 @@
     <string name="start_question_time">質問タイム開始</string>
     <string name="question_time">質問タイム</string>
     <string name="correct_answer">正解</string>
+    <string name="discussion_finished">議論終了</string>
     <string name="discussion_time">議論タイム</string>
+    <string name="description_discussion">"議論する内容\n\n1. 正解を答えた人がインサイダーか\n2. 違う場合、インサイダーが誰なのか"</string>
+    <string name="help_button">help button</string>
 </resources>
