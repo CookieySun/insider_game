@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/startGameFragment">
+
+    <fragment
+        android:id="@+id/startGameFragment"
+        android:name="kktyu.xyz.insidergame.StartGameFragment"
+        android:label="fragment_start_game"
+        tools:layout="@layout/fragment_start_game">
+        <action
+            android:id="@+id/action_startGameFragment_to_selectNumberFragment"
+            app:destination="@id/selectNumberFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectNumberFragment"
+        android:name="kktyu.xyz.insidergame.SelectNumberFragment"
+        android:label="fragment_select_number"
+        tools:layout="@layout/fragment_select_number">
+        <action
+            android:id="@+id/action_selectNumberFragment_to_displayConfirmationFragment"
+            app:destination="@id/displayConfirmationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/displayConfirmationFragment"
+        android:name="kktyu.xyz.insidergame.DisplayConfirmationFragment"
+        android:label="fragment_display_confirmation"
+        tools:layout="@layout/fragment_display_confirmation">
+        <action
+            android:id="@+id/action_displayConfirmationFragment_to_roleConfirmationFragment"
+            app:destination="@id/roleConfirmationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/roleConfirmationFragment"
+        android:name="kktyu.xyz.insidergame.RoleConfirmationFragment"
+        android:label="fragment_role_confirmation"
+        tools:layout="@layout/fragment_role_confirmation">
+        <action
+            android:id="@+id/action_roleConfirmationFragment_to_themeConfirmationFragment"
+            app:destination="@id/themeConfirmationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/masterConfirmationFragment"
+        android:name="kktyu.xyz.insidergame.MasterConfirmationFragment"
+        android:label="fragment_master_confirmation"
+        tools:layout="@layout/fragment_master_confirmation">
+        <action
+            android:id="@+id/action_masterConfirmationFragment_to_questionTimeFragment"
+            app:destination="@id/questionTimeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/themeConfirmationFragment"
+        android:name="kktyu.xyz.insidergame.ThemeConfirmationFragment"
+        android:label="fragment_theme_confirmation"
+        tools:layout="@layout/fragment_theme_confirmation">
+        <action
+            android:id="@+id/action_themeConfirmationFragment_to_masterConfirmationFragment"
+            app:destination="@id/masterConfirmationFragment" />
+        <action
+            android:id="@+id/action_themeConfirmationFragment_to_displayConfirmationFragment"
+            app:destination="@id/displayConfirmationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/questionTimeFragment"
+        android:name="kktyu.xyz.insidergame.QuestionTimeFragment"
+        android:label="fragment_count_down"
+        tools:layout="@layout/fragment_count_down" />
+</navigation>
