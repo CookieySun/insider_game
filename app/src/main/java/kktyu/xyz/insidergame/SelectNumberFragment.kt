@@ -42,7 +42,7 @@ class SelectNumberFragment : Fragment() {
             }
 
             fragmentManager!!.beginTransaction().replace(
-                R.id.container,
+                R.id.nav_host_fragment,
                 DisplayConfirmationFragment()
             ).commit()
         }

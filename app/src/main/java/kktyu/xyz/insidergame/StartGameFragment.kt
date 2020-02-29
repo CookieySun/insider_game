@@ -24,7 +24,7 @@ class StartGameFragment : Fragment() {
 
         binding.startGameBtn.setOnClickListener {
             fragmentManager!!.beginTransaction().replace(
-                R.id.container,
+                R.id.nav_host_fragment,
                 SelectNumberFragment()
             ).commit()
         }

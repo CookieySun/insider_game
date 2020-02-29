@@ -57,7 +57,7 @@ class QuestionTimeFragment : Fragment() {
 
     private fun beginDiscussionTimeFragment() {
         fragmentManager!!.beginTransaction().replace(
-            R.id.container,
+            R.id.nav_host_fragment,
             DiscussionTimeFragment()
         ).commit()
     }

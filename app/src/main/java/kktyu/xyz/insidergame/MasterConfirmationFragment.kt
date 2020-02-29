@@ -22,7 +22,7 @@ class MasterConfirmationFragment : Fragment() {
 
         start_question_time_button.setOnClickListener {
             fragmentManager!!.beginTransaction().replace(
-                R.id.container,
+                R.id.nav_host_fragment,
                 QuestionTimeFragment()
             ).commit()
         }

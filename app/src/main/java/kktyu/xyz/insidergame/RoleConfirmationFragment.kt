@@ -56,19 +56,19 @@ class RoleConfirmationFragment : Fragment() {
             when {
                 isMasterOrInsider -> {
                     fragmentManager!!.beginTransaction().replace(
-                        R.id.container,
+                        R.id.nav_host_fragment,
                         ThemeConfirmationFragment()
                     ).commit()
                 }
                 isLast -> {
                     fragmentManager!!.beginTransaction().replace(
-                        R.id.container,
+                        R.id.nav_host_fragment,
                         MasterConfirmationFragment()
                     ).commit()
                 }
                 else -> {
                     fragmentManager!!.beginTransaction().replace(
-                        R.id.container,
+                        R.id.nav_host_fragment,
                         DisplayConfirmationFragment()
                     ).commit()
                 }

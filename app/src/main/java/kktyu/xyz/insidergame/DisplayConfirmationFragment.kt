@@ -45,7 +45,7 @@ class DisplayConfirmationFragment : Fragment() {
 
         binding.yesBtn.setOnClickListener {
             fragmentManager!!.beginTransaction().replace(
-                R.id.container,
+                R.id.nav_host_fragment,
                 RoleConfirmationFragment()
             ).commit()
         }

@@ -37,13 +37,13 @@ class ThemeConfirmationFragment : Fragment() {
             when {
                 isLast -> {
                     fragmentManager!!.beginTransaction().replace(
-                        R.id.container,
+                        R.id.nav_host_fragment,
                         MasterConfirmationFragment()
                     ).commit()
                 }
                 else -> {
                     fragmentManager!!.beginTransaction().replace(
-                        R.id.container,
+                        R.id.nav_host_fragment,
                         DisplayConfirmationFragment()
                     ).commit()
                 }
