@@ -10,7 +10,8 @@ import androidx.fragment.app.Fragment
 import kktyu.xyz.insidergame.databinding.FragmentCountDownBinding
 
 class QuestionTimeFragment : Fragment() {
-    lateinit var binding: FragmentCountDownBinding
+    private var _binding: FragmentCountDownBinding? = null
+    private val binding get() = _binding!!
 
     private val timer by lazy {
         object : CountDownTimer(300000, 250) {
@@ -32,7 +33,7 @@ class QuestionTimeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentCountDownBinding.inflate(inflater, container, false)
+        _binding = FragmentCountDownBinding.inflate(inflater, container, false)
 
         return binding.root
     }
@@ -51,6 +52,7 @@ class QuestionTimeFragment : Fragment() {
         super.onDestroyView()
 
         timer.cancel()
+        _binding = null
     }
 
     private fun beginDiscussionTimeFragment() {

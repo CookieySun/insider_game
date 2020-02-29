@@ -13,7 +13,8 @@ import kktyu.xyz.insidergame.databinding.FragmentCountDownBinding
 
 
 class DiscussionTimeFragment : Fragment() {
-    lateinit var binding: FragmentCountDownBinding
+    private var _binding: FragmentCountDownBinding? = null
+    private val binding get() = _binding!!
 
     private val timer by lazy {
         object : CountDownTimer(300000, 250) {
@@ -34,7 +35,7 @@ class DiscussionTimeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentCountDownBinding.inflate(inflater, container, false)
+        _binding = FragmentCountDownBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -73,6 +74,7 @@ class DiscussionTimeFragment : Fragment() {
         super.onDestroyView()
 
         timer.cancel()
+        _binding = null
     }
 
     private fun fadeout() { // 透明度を1から0に変化
