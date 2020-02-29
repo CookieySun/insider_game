@@ -8,7 +8,8 @@ import androidx.fragment.app.Fragment
 import kktyu.xyz.insidergame.databinding.FragmentDisplayConfirmationBinding
 
 class DisplayConfirmationFragment : Fragment() {
-    lateinit var binding: FragmentDisplayConfirmationBinding
+    private var _binding: FragmentDisplayConfirmationBinding? = null
+    private val binding get() = _binding!!
 
     private var number = 0
     private var nextNum = 0
@@ -32,7 +33,7 @@ class DisplayConfirmationFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentDisplayConfirmationBinding.inflate(inflater, container, false)
+        _binding = FragmentDisplayConfirmationBinding.inflate(inflater, container, false)
 
         return binding.root
     }
@@ -48,5 +49,10 @@ class DisplayConfirmationFragment : Fragment() {
                 RoleConfirmationFragment()
             ).commit()
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

@@ -8,13 +8,14 @@ import androidx.fragment.app.Fragment
 import kktyu.xyz.insidergame.databinding.FragmentStartGameBinding
 
 class StartGameFragment : Fragment() {
-    lateinit var binding: FragmentStartGameBinding
+    private var _binding: FragmentStartGameBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentStartGameBinding.inflate(inflater, container, false)
+        _binding = FragmentStartGameBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -27,5 +28,11 @@ class StartGameFragment : Fragment() {
                 SelectNumberFragment()
             ).commit()
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+
+        _binding = null
     }
 }

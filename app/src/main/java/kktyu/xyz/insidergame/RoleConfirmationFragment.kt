@@ -8,13 +8,14 @@ import androidx.fragment.app.Fragment
 import kktyu.xyz.insidergame.databinding.FragmentRoleConfirmationBinding
 
 class RoleConfirmationFragment : Fragment() {
-    lateinit var binding: FragmentRoleConfirmationBinding
+    private var _binding: FragmentRoleConfirmationBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentRoleConfirmationBinding.inflate(inflater, container, false)
+        _binding = FragmentRoleConfirmationBinding.inflate(inflater, container, false)
 
         return binding.root
     }
