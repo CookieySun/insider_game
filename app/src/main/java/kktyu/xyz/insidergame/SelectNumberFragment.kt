@@ -13,12 +13,13 @@ import kotlinx.android.synthetic.main.fragment_select_number.*
 import kotlin.random.Random
 
 class SelectNumberFragment : Fragment() {
-    lateinit var binding: FragmentSelectNumberBinding
+    private var _binding: FragmentSelectNumberBinding? = null
+    private val binding get() = _binding!!
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentSelectNumberBinding.inflate(inflater, container, false)
+        _binding = FragmentSelectNumberBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -45,6 +46,12 @@ class SelectNumberFragment : Fragment() {
                 DisplayConfirmationFragment()
             ).commit()
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+
+        _binding = null
     }
 
     private fun choiceInsider(selectedNumber: Int, master: Int): Int {

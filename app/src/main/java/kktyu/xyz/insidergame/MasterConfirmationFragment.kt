@@ -24,6 +24,4 @@ class MasterConfirmationFragment : Fragment() {
             // TODO 質問タイムへ
         }
     }
-
-
 }

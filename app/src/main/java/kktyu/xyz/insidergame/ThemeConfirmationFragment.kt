@@ -8,12 +8,14 @@ import androidx.fragment.app.Fragment
 import kktyu.xyz.insidergame.databinding.FragmentThemeConfirmationBinding
 
 class ThemeConfirmationFragment : Fragment() {
-    lateinit var binding: FragmentThemeConfirmationBinding
+    private var _binding: FragmentThemeConfirmationBinding? = null
+    private val binding get() = _binding!!
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentThemeConfirmationBinding.inflate(inflater, container, false)
+        _binding = FragmentThemeConfirmationBinding.inflate(inflater, container, false)
 
         return binding.root
     }
@@ -21,15 +23,15 @@ class ThemeConfirmationFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.viewModel = ThemeConfirmationViewModel()
+        val viewModel = ThemeConfirmationViewModel()
 
         val mainActivity = activity as MainActivity
         val playersInfo = mainActivity.playersInfo
 
         val isLast = playersInfo.nextNum >= playersInfo.number
-        binding.viewModel!!.setButtonText(isLast)
+        binding.nextButton.text = viewModel.setButtonText(isLast)
 
-        binding.viewModel!!.theme = mainActivity.theme
+        binding.themeText.text = mainActivity.theme
 
         binding.nextButton.setOnClickListener {
             when {
@@ -47,5 +49,11 @@ class ThemeConfirmationFragment : Fragment() {
                 }
             }
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+
+        _binding = null
     }
 }
