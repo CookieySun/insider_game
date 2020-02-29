@@ -40,7 +40,7 @@ class DisplayConfirmationFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.text = "$nextNum 人目の"
+        binding.personSpot.text = "$nextNum 人目の"
 
         binding.yesBtn.setOnClickListener {
             fragmentManager!!.beginTransaction().replace(

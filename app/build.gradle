@@ -8,12 +8,12 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 29
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "kktyu.xyz.insidergame"
         minSdkVersion 21
-        targetSdkVersion 28
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -26,6 +26,7 @@ android {
     }
 
     dataBinding.enabled = true
+    viewBinding.enabled = true
     kotlinOptions {
         jvmTarget = '1.8'
     }
@@ -42,5 +43,5 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
-    api 'com.google.android.material:material:1.2.0-alpha04'
+    api 'com.google.android.material:material:1.2.0-alpha05'
 }

@@ -30,9 +30,7 @@ class RoleConfirmationFragment : Fragment() {
 
         val isLast = mainActivity.playersInfo.nextNum >= mainActivity.playersInfo.number
 
-        binding.viewModel = RoleConfirmationViewModel()
-
-        binding.viewModel!!.role = if (!isMasterOrInsider) {
+        binding.displayRole.text = if (!isMasterOrInsider) {
             "市民"
         } else if (nextNum == mainActivity.playersInfo.master) {
             "マスター"
@@ -40,7 +38,7 @@ class RoleConfirmationFragment : Fragment() {
             "インサイダー"
         }
 
-        binding.viewModel!!.buttonText =
+        binding.nextButton.text =
             when {
                 isMasterOrInsider -> {
                     "お題確認へ"

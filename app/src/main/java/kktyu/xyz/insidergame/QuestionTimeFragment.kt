@@ -19,7 +19,7 @@ class QuestionTimeFragment : Fragment() {
                 val sec = "%02d".format(millisSec % 60)
                 val min = millisSec / 60
 
-                binding.remainingTime = "$min:$sec"
+                binding.remainingTimeText.text = "$min:$sec"
             }
 
             override fun onFinish() {

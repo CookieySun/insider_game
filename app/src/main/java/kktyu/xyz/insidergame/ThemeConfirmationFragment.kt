@@ -21,15 +21,15 @@ class ThemeConfirmationFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.viewModel = ThemeConfirmationViewModel()
+        val viewModel = ThemeConfirmationViewModel()
 
         val mainActivity = activity as MainActivity
         val playersInfo = mainActivity.playersInfo
 
         val isLast = playersInfo.nextNum >= playersInfo.number
-        binding.viewModel!!.setButtonText(isLast)
+        binding.nextButton.text = viewModel.setButtonText(isLast)
 
-        binding.viewModel!!.theme = mainActivity.theme
+        binding.themeText.text = mainActivity.theme
 
         binding.nextButton.setOnClickListener {
             when {
