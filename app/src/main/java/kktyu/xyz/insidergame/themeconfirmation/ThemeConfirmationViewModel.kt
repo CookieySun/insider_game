@@ -1,4 +1,4 @@
-package kktyu.xyz.insidergame
+package kktyu.xyz.insidergame.themeconfirmation
 
 import androidx.lifecycle.ViewModel
 

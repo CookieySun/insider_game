@@ -1,4 +1,4 @@
-package kktyu.xyz.insidergame
+package kktyu.xyz.insidergame.selectnumber
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import kktyu.xyz.insidergame.MainActivity
 import kktyu.xyz.insidergame.databinding.FragmentSelectNumberBinding
 import kotlinx.android.synthetic.main.fragment_select_number.*
 import kotlin.random.Random

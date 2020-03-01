@@ -1,4 +1,4 @@
-package kktyu.xyz.insidergame
+package kktyu.xyz.insidergame.themeconfirmation
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import kktyu.xyz.insidergame.MainActivity
+import kktyu.xyz.insidergame.ThemeConfirmationFragmentDirections
 import kktyu.xyz.insidergame.databinding.FragmentThemeConfirmationBinding
 
 class ThemeConfirmationFragment : Fragment() {
@@ -24,7 +26,8 @@ class ThemeConfirmationFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val viewModel = ThemeConfirmationViewModel()
+        val viewModel =
+            ThemeConfirmationViewModel()
 
         val mainActivity = activity as MainActivity
         val playersInfo = mainActivity.playersInfo
