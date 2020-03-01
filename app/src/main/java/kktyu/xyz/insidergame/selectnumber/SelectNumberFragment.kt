@@ -1,4 +1,4 @@
-package kktyu.xyz.insidergame
+package kktyu.xyz.insidergame.selectnumber
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,9 +9,9 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import kktyu.xyz.insidergame.MainActivity
 import kktyu.xyz.insidergame.databinding.FragmentSelectNumberBinding
 import kotlinx.android.synthetic.main.fragment_select_number.*
-import kotlin.random.Random
 
 class SelectNumberFragment : Fragment() {
     private var _binding: FragmentSelectNumberBinding? = null
@@ -29,10 +29,12 @@ class SelectNumberFragment : Fragment() {
 
         setSpinner()
 
+        val viewModel = SelectNumberViewModel()
+
         start_btn.setOnClickListener {
             val selectedNumber = binding.selectedNumber.text.toString().toInt()
-            val master = Random.nextInt(selectedNumber)
-            val insider = choiceInsider(selectedNumber, master)
+            val master = viewModel.choiceMaster(selectedNumber)
+            val insider = viewModel.choiceInsider(selectedNumber, master)
 
             val mainActivity = activity as MainActivity
 
@@ -52,16 +54,6 @@ class SelectNumberFragment : Fragment() {
         super.onDestroyView()
 
         _binding = null
-    }
-
-    private fun choiceInsider(selectedNumber: Int, master: Int): Int {
-        var insider = Random.nextInt(selectedNumber)
-
-        while (master == insider) {
-            insider = Random.nextInt(selectedNumber)
-        }
-
-        return insider
     }
 
     private fun setSpinner() {

@@ -1,4 +1,4 @@
-package kktyu.xyz.insidergame
+package kktyu.xyz.insidergame.discusstime
 
 
 import android.os.Bundle
@@ -9,8 +9,8 @@ import android.view.ViewGroup
 import android.view.animation.AlphaAnimation
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import kktyu.xyz.insidergame.R
 import kktyu.xyz.insidergame.databinding.FragmentCountDownBinding
-
 
 class DiscussionTimeFragment : Fragment() {
     private var _binding: FragmentCountDownBinding? = null

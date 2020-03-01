@@ -1,4 +1,4 @@
-package kktyu.xyz.insidergame
+package kktyu.xyz.insidergame.masterconfirmation
 
 
 import android.os.Bundle
@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import kktyu.xyz.insidergame.MasterConfirmationFragmentDirections
+import kktyu.xyz.insidergame.R
 import kotlinx.android.synthetic.main.fragment_master_confirmation.*
 
 class MasterConfirmationFragment : Fragment() {

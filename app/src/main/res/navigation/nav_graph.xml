@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/startGameFragment"
-        android:name="kktyu.xyz.insidergame.StartGameFragment"
+        android:name="kktyu.xyz.insidergame.startgame.StartGameFragment"
         android:label="fragment_start_game"
         tools:layout="@layout/fragment_start_game">
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/selectNumberFragment"
-        android:name="kktyu.xyz.insidergame.SelectNumberFragment"
+        android:name="kktyu.xyz.insidergame.selectnumber.SelectNumberFragment"
         android:label="fragment_select_number"
         tools:layout="@layout/fragment_select_number">
         <action
@@ -26,7 +26,7 @@
     </fragment>
     <fragment
         android:id="@+id/displayConfirmationFragment"
-        android:name="kktyu.xyz.insidergame.DisplayConfirmationFragment"
+        android:name="kktyu.xyz.insidergame.displaycomfirmation.DisplayConfirmationFragment"
         android:label="fragment_display_confirmation"
         tools:layout="@layout/fragment_display_confirmation">
         <action
@@ -36,7 +36,7 @@
     </fragment>
     <fragment
         android:id="@+id/roleConfirmationFragment"
-        android:name="kktyu.xyz.insidergame.RoleConfirmationFragment"
+        android:name="kktyu.xyz.insidergame.roleconfirmation.RoleConfirmationFragment"
         android:label="fragment_role_confirmation"
         tools:layout="@layout/fragment_role_confirmation">
         <action
@@ -54,7 +54,7 @@
     </fragment>
     <fragment
         android:id="@+id/masterConfirmationFragment"
-        android:name="kktyu.xyz.insidergame.MasterConfirmationFragment"
+        android:name="kktyu.xyz.insidergame.masterconfirmation.MasterConfirmationFragment"
         android:label="fragment_master_confirmation"
         tools:layout="@layout/fragment_master_confirmation">
         <action
@@ -64,7 +64,7 @@
     </fragment>
     <fragment
         android:id="@+id/themeConfirmationFragment"
-        android:name="kktyu.xyz.insidergame.ThemeConfirmationFragment"
+        android:name="kktyu.xyz.insidergame.themeconfirmation.ThemeConfirmationFragment"
         android:label="fragment_theme_confirmation"
         tools:layout="@layout/fragment_theme_confirmation">
         <action
@@ -78,7 +78,7 @@
     </fragment>
     <fragment
         android:id="@+id/questionTimeFragment"
-        android:name="kktyu.xyz.insidergame.QuestionTimeFragment"
+        android:name="kktyu.xyz.insidergame.questiontiome.QuestionTimeFragment"
         android:label="fragment_count_down"
         tools:layout="@layout/fragment_count_down">
         <action
@@ -88,6 +88,6 @@
     </fragment>
     <fragment
         android:id="@+id/discussionTimeFragment"
-        android:name="kktyu.xyz.insidergame.DiscussionTimeFragment"
+        android:name="kktyu.xyz.insidergame.discusstime.DiscussionTimeFragment"
         android:label="DiscussionTimeFragment" />
 </navigation>
