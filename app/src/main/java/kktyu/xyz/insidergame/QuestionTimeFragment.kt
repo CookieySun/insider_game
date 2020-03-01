@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import kktyu.xyz.insidergame.databinding.FragmentCountDownBinding
 
 class QuestionTimeFragment : Fragment() {
@@ -56,9 +57,8 @@ class QuestionTimeFragment : Fragment() {
     }
 
     private fun beginDiscussionTimeFragment() {
-        fragmentManager!!.beginTransaction().replace(
-            R.id.container,
-            DiscussionTimeFragment()
-        ).commit()
+        val action =
+            QuestionTimeFragmentDirections.actionQuestionTimeFragmentToDiscussionTimeFragment()
+        view!!.findNavController().navigate(action)
     }
 }

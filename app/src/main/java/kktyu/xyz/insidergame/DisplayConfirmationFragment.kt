@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import kktyu.xyz.insidergame.databinding.FragmentDisplayConfirmationBinding
 
 class DisplayConfirmationFragment : Fragment() {
@@ -44,10 +45,10 @@ class DisplayConfirmationFragment : Fragment() {
         binding.personSpot.text = "$nextNum 人目の"
 
         binding.yesBtn.setOnClickListener {
-            fragmentManager!!.beginTransaction().replace(
-                R.id.container,
-                RoleConfirmationFragment()
-            ).commit()
+
+            val action =
+                DisplayConfirmationFragmentDirections.actionDisplayConfirmationFragmentToRoleConfirmationFragment()
+            it.findNavController().navigate(action)
         }
     }
 
