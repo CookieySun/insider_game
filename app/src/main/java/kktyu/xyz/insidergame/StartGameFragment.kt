@@ -23,6 +23,10 @@ class StartGameFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val mainActivity = activity as MainActivity
+
+        mainActivity.playersInfo.nextNum = 0
+
         binding.startGameBtn.setOnClickListener {
             val action =
                 StartGameFragmentDirections.actionStartGameFragmentToSelectNumberFragment()

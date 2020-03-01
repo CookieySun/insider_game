@@ -21,7 +21,8 @@
         tools:layout="@layout/fragment_select_number">
         <action
             android:id="@+id/action_selectNumberFragment_to_displayConfirmationFragment"
-            app:destination="@id/displayConfirmationFragment" />
+            app:destination="@id/displayConfirmationFragment"
+            app:popUpTo="@id/startGameFragment" />
     </fragment>
     <fragment
         android:id="@+id/displayConfirmationFragment"
@@ -30,7 +31,8 @@
         tools:layout="@layout/fragment_display_confirmation">
         <action
             android:id="@+id/action_displayConfirmationFragment_to_roleConfirmationFragment"
-            app:destination="@id/roleConfirmationFragment" />
+            app:destination="@id/roleConfirmationFragment"
+            app:popUpTo="@id/startGameFragment" />
     </fragment>
     <fragment
         android:id="@+id/roleConfirmationFragment"
@@ -39,13 +41,16 @@
         tools:layout="@layout/fragment_role_confirmation">
         <action
             android:id="@+id/action_roleConfirmationFragment_to_themeConfirmationFragment"
-            app:destination="@id/themeConfirmationFragment" />
+            app:destination="@id/themeConfirmationFragment"
+            app:popUpTo="@id/startGameFragment" />
         <action
             android:id="@+id/action_roleConfirmationFragment_to_masterConfirmationFragment"
-            app:destination="@id/masterConfirmationFragment" />
+            app:destination="@id/masterConfirmationFragment"
+            app:popUpTo="@id/startGameFragment" />
         <action
             android:id="@+id/action_roleConfirmationFragment_to_displayConfirmationFragment"
-            app:destination="@id/displayConfirmationFragment" />
+            app:destination="@id/displayConfirmationFragment"
+            app:popUpTo="@id/startGameFragment" />
     </fragment>
     <fragment
         android:id="@+id/masterConfirmationFragment"
@@ -54,7 +59,8 @@
         tools:layout="@layout/fragment_master_confirmation">
         <action
             android:id="@+id/action_masterConfirmationFragment_to_questionTimeFragment"
-            app:destination="@id/questionTimeFragment" />
+            app:destination="@id/questionTimeFragment"
+            app:popUpTo="@id/startGameFragment" />
     </fragment>
     <fragment
         android:id="@+id/themeConfirmationFragment"
@@ -63,10 +69,12 @@
         tools:layout="@layout/fragment_theme_confirmation">
         <action
             android:id="@+id/action_themeConfirmationFragment_to_masterConfirmationFragment"
-            app:destination="@id/masterConfirmationFragment" />
+            app:destination="@id/masterConfirmationFragment"
+            app:popUpTo="@id/startGameFragment" />
         <action
             android:id="@+id/action_themeConfirmationFragment_to_displayConfirmationFragment"
-            app:destination="@id/displayConfirmationFragment" />
+            app:destination="@id/displayConfirmationFragment"
+            app:popUpTo="@id/startGameFragment" />
     </fragment>
     <fragment
         android:id="@+id/questionTimeFragment"
@@ -75,7 +83,8 @@
         tools:layout="@layout/fragment_count_down">
         <action
             android:id="@+id/action_questionTimeFragment_to_discussionTimeFragment"
-            app:destination="@id/discussionTimeFragment" />
+            app:destination="@id/discussionTimeFragment"
+            app:popUpTo="@id/startGameFragment" />
     </fragment>
     <fragment
         android:id="@+id/discussionTimeFragment"
