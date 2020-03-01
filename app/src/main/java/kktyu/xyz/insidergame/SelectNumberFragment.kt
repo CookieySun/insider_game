@@ -37,9 +37,9 @@ class SelectNumberFragment : Fragment() {
             val mainActivity = activity as MainActivity
 
             mainActivity.apply {
-                this.playersInfo.number = selectedNumber
-                this.playersInfo.master = master
-                this.playersInfo.insider = insider
+                playersInfo.number = selectedNumber
+                playersInfo.master = master
+                playersInfo.insider = insider
             }
 
             val action =
