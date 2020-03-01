@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import kktyu.xyz.insidergame.databinding.FragmentThemeConfirmationBinding
 
 class ThemeConfirmationFragment : Fragment() {
@@ -36,16 +37,14 @@ class ThemeConfirmationFragment : Fragment() {
         binding.nextButton.setOnClickListener {
             when {
                 isLast -> {
-                    fragmentManager!!.beginTransaction().replace(
-                        R.id.nav_host_fragment,
-                        MasterConfirmationFragment()
-                    ).commit()
+                    val action =
+                        ThemeConfirmationFragmentDirections.actionThemeConfirmationFragmentToMasterConfirmationFragment()
+                    it.findNavController().navigate(action)
                 }
                 else -> {
-                    fragmentManager!!.beginTransaction().replace(
-                        R.id.nav_host_fragment,
-                        DisplayConfirmationFragment()
-                    ).commit()
+                    val action =
+                        ThemeConfirmationFragmentDirections.actionThemeConfirmationFragmentToDisplayConfirmationFragment()
+                    it.findNavController().navigate(action)
                 }
             }
         }

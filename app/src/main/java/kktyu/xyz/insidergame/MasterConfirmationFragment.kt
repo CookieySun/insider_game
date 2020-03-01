@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import kotlinx.android.synthetic.main.fragment_master_confirmation.*
 
 class MasterConfirmationFragment : Fragment() {
@@ -21,10 +22,9 @@ class MasterConfirmationFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         start_question_time_button.setOnClickListener {
-            fragmentManager!!.beginTransaction().replace(
-                R.id.nav_host_fragment,
-                QuestionTimeFragment()
-            ).commit()
+            val action =
+                MasterConfirmationFragmentDirections.actionMasterConfirmationFragmentToQuestionTimeFragment()
+            it.findNavController().navigate(action)
         }
     }
 }

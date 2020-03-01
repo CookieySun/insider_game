@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import kktyu.xyz.insidergame.databinding.FragmentRoleConfirmationBinding
 
 class RoleConfirmationFragment : Fragment() {
@@ -55,22 +56,19 @@ class RoleConfirmationFragment : Fragment() {
         binding.nextButton.setOnClickListener {
             when {
                 isMasterOrInsider -> {
-                    fragmentManager!!.beginTransaction().replace(
-                        R.id.nav_host_fragment,
-                        ThemeConfirmationFragment()
-                    ).commit()
+                    val action =
+                        RoleConfirmationFragmentDirections.actionRoleConfirmationFragmentToThemeConfirmationFragment()
+                    it.findNavController().navigate(action)
                 }
                 isLast -> {
-                    fragmentManager!!.beginTransaction().replace(
-                        R.id.nav_host_fragment,
-                        MasterConfirmationFragment()
-                    ).commit()
+                    val action =
+                        RoleConfirmationFragmentDirections.actionRoleConfirmationFragmentToMasterConfirmationFragment()
+                    it.findNavController().navigate(action)
                 }
                 else -> {
-                    fragmentManager!!.beginTransaction().replace(
-                        R.id.nav_host_fragment,
-                        DisplayConfirmationFragment()
-                    ).commit()
+                    val action =
+                        RoleConfirmationFragmentDirections.actionRoleConfirmationFragmentToDisplayConfirmationFragment()
+                    it.findNavController().navigate(action)
                 }
             }
         }

@@ -8,6 +8,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import kktyu.xyz.insidergame.databinding.FragmentSelectNumberBinding
 import kotlinx.android.synthetic.main.fragment_select_number.*
 import kotlin.random.Random
@@ -41,10 +42,9 @@ class SelectNumberFragment : Fragment() {
                 this.playersInfo.insider = insider
             }
 
-            fragmentManager!!.beginTransaction().replace(
-                R.id.nav_host_fragment,
-                DisplayConfirmationFragment()
-            ).commit()
+            val action =
+                SelectNumberFragmentDirections.actionSelectNumberFragmentToDisplayConfirmationFragment()
+            it.findNavController().navigate(action)
         }
     }
 

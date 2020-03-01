@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import kktyu.xyz.insidergame.databinding.FragmentStartGameBinding
 
 class StartGameFragment : Fragment() {
@@ -23,10 +24,9 @@ class StartGameFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.startGameBtn.setOnClickListener {
-            fragmentManager!!.beginTransaction().replace(
-                R.id.nav_host_fragment,
-                SelectNumberFragment()
-            ).commit()
+            val action =
+                StartGameFragmentDirections.actionStartGameFragmentToSelectNumberFragment()
+            it.findNavController().navigate(action)
         }
     }
 

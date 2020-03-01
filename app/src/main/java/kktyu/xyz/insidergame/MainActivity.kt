@@ -13,9 +13,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        supportFragmentManager.beginTransaction().replace(
-            R.id.nav_host_fragment,
-            StartGameFragment()
-        ).commit()
+//        supportFragmentManager.beginTransaction().replace(
+//            R.id.nav_host_fragment,
+//            StartGameFragment()
+//        ).commit()
     }
 }
