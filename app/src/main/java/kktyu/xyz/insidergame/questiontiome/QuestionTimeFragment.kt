@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import kktyu.xyz.insidergame.QuestionTimeFragmentDirections
 import kktyu.xyz.insidergame.databinding.FragmentCountDownBinding
 
 class QuestionTimeFragment : Fragment() {
