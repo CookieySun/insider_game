@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import kktyu.xyz.insidergame.MainActivity
-import kktyu.xyz.insidergame.RoleConfirmationFragmentDirections
 import kktyu.xyz.insidergame.databinding.FragmentRoleConfirmationBinding
 
 class RoleConfirmationFragment : Fragment() {

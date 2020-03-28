@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import kktyu.xyz.insidergame.MainActivity
-import kktyu.xyz.insidergame.ThemeConfirmationFragmentDirections
 import kktyu.xyz.insidergame.databinding.FragmentThemeConfirmationBinding
 
 class ThemeConfirmationFragment : Fragment() {
